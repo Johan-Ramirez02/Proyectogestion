@@ -1,0 +1,28 @@
+<div class = "pt-5 mb-2 bg-primary text-dark border border-danger">
+    <%= form_with(model: @project, url: "/projects/create", local: true) do |f|%>
+
+    <div class = "form-group">
+        <%= f.text_field :name, placeholder: 'Ingrese un nombre', class: 'form-control' %>
+    </div>
+
+    <div class = "form-group ">
+        <%= f.text_area :description, placeholder: 'Describa su proyecto', class: 'form-control'   %>
+    </div>
+        
+    <div class = "form-group">
+        <%= f.date_select :starts_on, class: 'form-control'  %>
+    </div>
+    
+    <div class = "form-group">
+        <%= f.datetime_select :finish_on, class: 'form-control'  %>
+    </div>
+
+    <div class = "form-group">
+        <%= f.select :status, options_for_select(@statuses), {include_blank: true}, class: 'form-control' %>
+    </div>
+    
+    <%= f.submit 'Crear Proyecto', class: 'btn btn-primary' %>
+    
+    
+    <% end %>
+</div>
