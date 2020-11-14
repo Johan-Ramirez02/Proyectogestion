@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-    http_basic_authenticate_with name: "algo", password: "123456", only: :dashboard
+    # http_basic_authenticate_with name: "algo", password: "123456", only: :dashboard
     def dashboard
         if params[:search].present?
             @projects = Project.where("status = ?", params[:search])
